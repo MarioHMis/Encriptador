@@ -123,3 +123,9 @@ textarea:focus {
 .section2 img {
   width: 150px;
 }
+
+.footer {
+  background-color: var(--color-terciario);
+  color: var(--color-secundario);
+  text-align: center;
+}
