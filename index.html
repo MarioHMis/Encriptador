@@ -5,15 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="./images/favicon.png" type="image/x-icon" />
-    <title>Encriptador de palabras</title>
+    <title>Encriptador</title>
   </head>
   <body>
-    <header>
-      <div class="encabezado">
-        <h3>Alura Oracle One</h3>
-        <h1>Encriptador</h1>
-      </div>
+    <a>
+      <img class="logo" src="./images/logoalura.jpg" alt="logo alura">
+    </a>
+    <a></a>
     </header>
+    <main class="content">
+      <div class="conteiner">
+        <div class="section1">
+          <textarea id="text" placeholder="Ingrese el texto a encriptar"></textarea>
+        <div class="validation">
+          <p>
+            <i class="fa-solid fa-circle-exclamation">
+            </i>
+            Solo letras minusculas y sin acentos
+          </p>
+        </div>
+        <div class="buttons">
+          <button class="btn-encriptar">Encriptar</button>
+          <button class="btn-desencriptar">Desencriptar</button>
+        </div>
+        </div>
+      </div>
+      <div class="section2">
+        <div class="result">
+          <img src="./images/imagenSecurity.gif" alt="esfera rotando">
+          <h3>Ningun mensaje fue encriptado</h3>
+          <p>encuentra el texto que deseas encriptar o desencriptar</p>
+        </div>
+      </div>
+    </main>
     <footer>Desarrollado por Mario H Mis</footer>
+    <script src="./app.js"></script>
   </body>
 </html>
