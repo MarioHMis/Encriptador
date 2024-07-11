@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="./images/favicon.png" type="image/x-icon" />
-    <title>Encriptador</title>
-  </head>
-  <body>
-    <a>
-      <img class="logo" src="./images/logoalura.jpg" alt="logo alura">
-    </a>
-    <a></a>
-    </header>
-    <main class="content">
-      <div class="conteiner">
-        <div class="section1">
-          <textarea id="text" placeholder="Ingrese el texto a encriptar"></textarea>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="./images/favicon.png" type="image/x-icon" />
+  <title>Encriptador</title>
+</head>
+
+<body>
+  <a>
+    <img class="logo" src="./images/logoalura.jpg" alt="logo alura">
+  </a>
+  <a></a>
+  </header>
+  <main class="content">
+    <div class="conteiner">
+      <div class="section1">
+        <textarea class="text" id="text" cols="30" rows="10" placeholder="Ingrese el texto a encriptar"></textarea>
         <div class="validation">
           <p>
-            <i class="fa-solid fa-circle-exclamation">
-            </i>
             Solo letras minusculas y sin acentos
           </p>
         </div>
         <div class="buttons">
-          <button class="btn-encriptar">Encriptar</button>
-          <button class="btn-desencriptar">Desencriptar</button>
-        </div>
-        </div>
-      </div>
-      <div class="section2">
-        <div class="result">
-          <img src="./images/imagenSecurity.gif" alt="esfera rotando">
-          <h3>Ningun mensaje fue encriptado</h3>
-          <p>encuentra el texto que deseas encriptar o desencriptar</p>
+          <button class="btn-encriptar" type="button" onclick="encriptar()">Encriptar</button>
+          <button class="btn-desencriptar" type="button" onclick="desencriptar()">Desencriptar</button>
         </div>
       </div>
-    </main>
-    <footer class="footer">Desarrollado por Mario H Mis</footer>
-    <script src="./app.js"></script>
-  </body>
+    </div>
+    <div class="section2">
+      <div class="result">
+        <img src="./images/imagenSecurity.gif" id="computador" alt="computador encriptando">
+        <div class="mensaje-encriptado" id="mensaje-encriptado">
+          <h2 id="titulo-mensaje">Ningun mensaje fue encriptado</h2>
+          <p id="parrafo">Introduce el texto que deseas encriptar o desencriptar</p>
+          <textarea name="mensaje" id="mensaje" cols="30" rows="10" class="mensaje"></textarea>
+        </div>
+
+      </div>
+    </div>
+  </main>
+  <footer class="footer">Desarrollado por Mario H Mis</footer>
+  <script src="./app.js"></script>
+</body>
+
 </html>
