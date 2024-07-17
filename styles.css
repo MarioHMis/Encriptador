@@ -3,15 +3,15 @@ Fuentes
 -------------*/
 @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
-/*-----------
-Global Css
-------------*/
+/*variables*/
 :root {
   --Fondo: #ffffff;
   --Oscuro: #14274e;
   --Medio: #394867;
   --Suave: #9ba4b4;
   --Ligero: #f1f6f9;
+  --Alerta: #d01414;
+  --Fuente: "Chakra Petch", sans-serif;
 }
 
 * {
@@ -21,6 +21,7 @@ Global Css
   font-family: "Inter", sans-serif;
   text-decoration: none;
   background: var(--Ligero);
+  font-family: var(--Fuente);
 }
 
 ::selection {
@@ -36,9 +37,8 @@ img {
   max-width: 100%;
 }
 
-/*-----------------
-Encabezado
-------------------*/
+/*header*/
+
 header {
   position: absolute;
   margin: 40px 0px 0px 40px;
@@ -52,9 +52,8 @@ header .logo {
   border-radius: 8px;
 }
 
-/*---------------
-Principal
-----------------*/
+/*main*/
+
 main {
   display: flex;
   flex-direction: row;
@@ -194,7 +193,7 @@ main {
   font-size: 18px;
   line-height: 120%;
   text-align: center;
-  color: var(--Medio);
+  color: var(--Oscuro);
   background: var(--Fondo);
 }
 
@@ -218,7 +217,7 @@ main {
   font-weight: 400;
   font-size: 24px;
   line-height: 36px;
-  color: var(--Oscuro);
+  color: var(--Medio);
   background: transparent;
   border-top-right-radius: 32px;
   border-top-left-radius: 32px;
@@ -242,21 +241,22 @@ main {
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-  background: var(--Oscuro);
+  background: var(--Suave);
   border: 1px solid var(--Medio);
   border-radius: 20px;
   cursor: pointer;
+  color: var(--Ligero);
 }
 
 .btn-encriptar:hover,
 .btn-desencriptar:hover,
 .btn-copiar:hover {
   transform: scale(0.97);
+  background-color: var(--Oscuro);
 }
 
-/*------------------
-Pie De Página
-------------------*/
+/*Footer*/
+
 footer {
   margin-top: 20px;
   padding: 5px;
