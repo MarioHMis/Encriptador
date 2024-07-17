@@ -1,79 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="./images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Encriptador</title>
   </head>
   <body>
+    <!-- Encabezado -->
     <header>
-      <a>
-        <img class="logoalura" src="./images/logoalura.jpg" alt="logo alura" />
+      <a href="#" rel="">
+        <img src="./images/logoalura.jpg" alt="Logo Alura" class="logo" />
       </a>
-      <a></a>
     </header>
-    <main class="content">
-      <div class="conteiner">
-        <div class="section1">
-          <textarea
-            class="text"
-            id="texto"
-            cols="30"
-            rows="10"
-            placeholder="Ingrese el texto a encriptar"
-          ></textarea>
-          <div class="validation">
-            <p>
-              <img
-                class="iconoAviso"
-                src="images/iconoAviso.png"
-                alt="icono de aviso"
-              />
-              letras minusculas y sin acentos
-            </p>
-          </div>
-          <div class="buttons">
-            <button class="btn-encriptar" type="button" onclick="encriptar()">
-              Encriptar
-            </button>
-            <button
-              class="btn-desencriptar"
-              type="button"
-              onclick="desencriptar()"
-            >
-              Desencriptar
-            </button>
-          </div>
+
+    <!-- Principal -->
+    <main>
+      <section class="encriptador">
+        <textarea
+          class="encriptar"
+          placeholder="Ingrese el texto a encriptar"
+        ></textarea>
+        <div class="encriptador-aviso">
+          <img src="./images/aviso.png" alt="Imagen Aviso" class="img-aviso" />
+          <p class="texto-aviso">Solo letras minúsculas y sin acentos</p>
         </div>
-      </div>
-      <!--Inicio seccion 2 area de respuesta-->
-      <div class="section2">
-        <div class="result">
+        <div class="encriptador-contenedor">
+          <button type="submit" class="btn-encriptar">Encriptar</button>
+          <button type="submit" class="btn-desencriptar">Desencriptar</button>
+        </div>
+      </section>
+      <section class="tarjeta">
+        <div class="tarjeta-contenedor">
           <img
-            class="computador"
             src="./images/imagenSecurity.gif"
-            id="computador"
-            alt="computador encriptando"
+            alt="computador con seguridad"
+            class="img-computador"
           />
-          <div class="mensaje-encriptado" id="mensaje-encriptado">
-            <h2 id="titulo-mensaje">Ningun mensaje fue encriptado</h2>
-            <p id="parrafo">
-              Introduce el texto que deseas encriptar o desencriptar
-            </p>
-            <textarea
-              name="mensaje"
-              id="mensaje"
-              cols="30"
-              rows="10"
-              class="mensaje"
-            ></textarea>
-          </div>
+          <p class="texto-uno">Ningún mensaje fue encontrado</p>
+          <p class="texto-dos">
+            Ingrese el texto que deseas encriptar o desencriptar
+          </p>
         </div>
-      </div>
+        <textarea type="mensaje" class="evaluar" readonly></textarea>
+        <button type="submit" class="btn-copiar">Copiar</button>
+      </section>
     </main>
-    <footer class="footer">Desarrollado por Mario H Mis 2024</footer>
-    <script src="./app.js"></script>
+
+    <!-- Pie de Página -->
+    <footer>
+      <p class="copyright">
+        &copy; copyright 2024 - Encriptador - desarrollado por MarioHMis
+      </p>
+      <a href="#" rel="">
+        <img src="./images/linkedin.png" alt="Logo Linkedin" class="linked" />
+      </a>
+      <a href="#" rel="">
+        <img src="./images/github.png" alt="Logo Github" class="github" />
+      </a>
+    </footer>
+
+    <script src="./js/encriptador.js"></script>
   </body>
 </html>

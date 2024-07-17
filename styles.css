@@ -1,171 +1,374 @@
-/* Import fonts google*/
-
+/*------------
+Fuentes
+-------------*/
 @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
-/* pojetc colors */
-
+/*-----------
+Global Css
+------------*/
 :root {
-  --color-primario: #eeeeee;
-  --color-secundario: #31363f;
-  --color-terciario: #76abae;
-  --color-cuaternario: #222831;
-
-  --fuente-chacra: "Chakra Petch", sans-serif;
+  --Fondo: #ffffff;
+  --Oscuro: #14274e;
+  --Medio: #394867;
+  --Suave: #9ba4b4;
+  --Ligero: #f1f6f9;
 }
 
 * {
-  margin: 2px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+  background: var(--Ligero);
+}
+
+::selection {
+  background: var(--Oscuro);
+  color: var(--Fondo);
 }
 
 body {
-  background-color: var(--color-primario);
+  height: 100%;
 }
 
-/*encabezado*/
+img {
+  max-width: 100%;
+}
 
+/*-----------------
+Encabezado
+------------------*/
 header {
+  position: absolute;
   margin: 40px 0px 0px 40px;
+}
+
+header .logo {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
 }
 
-.logoalura {
-  width: 60px;
-  height: 60px;
-  border-radius: 12px;
-}
-
-/*main section */
-
-.content {
-  width: 90%;
-  height: 80vh;
-  margin: 0px auto 50px auto;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 20px;
-}
-
-.container {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background: var(--color-terciario);
-}
-
-/* seccion que contiene el textarea y botones*/
-
-.section1 {
+/*---------------
+Principal
+----------------*/
+main {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 20px;
+  flex-direction: row;
+  background-size: cover;
+  background-position: center;
 }
 
-.text {
-  border: none;
-  background-color: transparent;
-  width: 100%;
-  height: 200%;
-  font-size: 25px;
-  resize: none;
-  border-radius: 12px;
-  font-family: var(--fuente-chacra);
+.encriptador {
+  width: 60%;
+  margin: 168px 0px 0px 140px;
+  background: transparent;
 }
 
-textarea:focus,
-textarea:active {
+.encriptar {
+  width: 660px;
+  height: 288px;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 48px;
   outline: none;
-  border: 1px solid var(--color-terciario);
+  border: 1px solid var(--Suave);
+  border-radius: 15px;
+  resize: none;
+  background-color: var(--Fondo);
 }
 
-/* section1*/
+.encriptar::placeholder,
+:focus {
+  color: var(--Suave);
+}
 
-.validation p {
+.encriptador-aviso {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  gap: 8px;
+  position: absolute;
+  top: 500px;
+}
+
+.img-aviso {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  padding: 0%;
+}
+
+.texto-aviso {
   width: 100%;
-  font-family: var(--fuente-chacra);
+  font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 150%;
   opacity: 0.8;
-  color: var(--color-secundario);
+  color: var(--Medio);
 }
 
-.iconoAviso {
-  align-items: center;
-  position: relative;
+.encriptador-contenedor {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+  position: absolute;
+  top: 526px;
 }
 
-.section1 button,
-.section2 button {
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
+.btn-encriptar {
+  width: 328px;
+  height: 67px;
+  padding: 24px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: var(--Ligero);
+  background: var(--Medio);
+  border: 1px solid var(--Ligero);
+  border-radius: 24px;
   cursor: pointer;
-  transition: all ease 400ms;
-  font-family: var(--fuente-chacra);
 }
 
-.section1 button:hover,
-.section2 button:hover {
-  transform: scale(1.05);
+.btn-encriptar:active {
+  box-shadow: inset 2px 2px 4px var(--Suave), inset -3px -4px 8px var(--Oscuro);
+  color: var(--Suave);
 }
 
-.buttons {
-  margin-top: 10px;
-  display: flex;
-  gap: 15px;
-}
-
-.section1 .btn-encriptar {
-  background-color: var(--color-cuaternario);
-  color: var(--color-terciario);
-  flex: 1;
-}
-
-.section1 .btn-desencriptar {
-  border: 1px solid var(--color-cuaternario);
-  color: var(--color-terciario);
-  flex: 1;
-}
-
-/* section2 */
-
-.section2 {
-  background-color: #fff; /*cambiar color */
-  padding: 15px;
+.btn-desencriptar {
+  width: 328px;
+  height: 67px;
+  padding: 24px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  box-shadow: 0px 0px 8px var(--color-terciario);
-  font-family: var(--fuente-chacra);
+  color: var(--Ligero);
+  background: var(--Medio);
+  border: 1px solid var(--Ligero);
+  border-radius: 24px;
+  cursor: pointer;
 }
 
-.computador {
-  width: 150px;
-  align-items: center;
+.btn-copiar:active,
+.btn-desencriptar:active {
+  box-shadow: inset 2px 2px 4px var(--Suave), inset -3px -4px 8px var(--Oscuro);
+  color: var(--Suave);
+}
+
+.tarjeta {
+  width: 270px;
+  height: 580px;
+  background: var(--Fondo);
+  box-shadow: 4px 10px 12px -4px var(--Suave);
   position: relative;
-}
-
-.mensaje {
-  border: none;
-  background-color: transparent;
-  width: 100%;
-  height: 200px;
-  font-size: 25px;
-  resize: none;
-  border: 1px solid var(--color-terciario);
-  border-radius: 12px;
-  font-family: var(--fuente-chacra);
-}
-/*footer*/
-
-.footer {
-  background-color: var(--color-terciario);
-  color: var(--color-secundario);
+  margin-top: 40px;
+  border-radius: 32px;
   text-align: center;
+  border: 1px solid var(--Suave);
+}
+
+.tarjeta-contenedor {
+  width: 250px;
+  margin: auto;
+  margin-top: 50%;
+  background: var(--Fondo);
+}
+
+.img-computador {
+  background: var(--Fondo);
+}
+
+.texto-uno {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 120%;
+  text-align: center;
+  color: var(--Medio);
+  background: var(--Fondo);
+}
+
+.texto-dos {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  text-align: center;
+  color: var(--Medio);
+  background: var(--Fondo);
+}
+
+.evaluar {
+  width: 100%;
+  height: 485px;
+  position: absolute;
+  padding: 20px;
+  top: 0;
+  left: 0;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  color: var(--Oscuro);
+  background: transparent;
+  border-top-right-radius: 32px;
+  border-top-left-radius: 32px;
+  border: none;
+  resize: none;
+}
+
+.evaluar:focus {
+  outline: none;
+}
+
+.btn-copiar {
+  width: 224px;
+  height: 67px;
+  margin: 23px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  padding: 24px;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  background: var(--Oscuro);
+  border: 1px solid var(--Medio);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.btn-encriptar:hover,
+.btn-desencriptar:hover,
+.btn-copiar:hover {
+  transform: scale(0.97);
+}
+
+/*------------------
+Pie De Página
+------------------*/
+footer {
+  margin-top: 20px;
+  padding: 5px;
+  border-top: 2px solid var(--Suave);
+  color: var(--Medio);
+  text-align: center;
+  height: 5px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--Medio);
+}
+.linked,
+.github {
+  width: 36px;
+  height: 36px;
+}
+.linked:hover {
+  color: var(--Fondo);
+  opacity: 0.8;
+}
+
+.github:hover {
+  color: var(--Fondo);
+  opacity: 0.6;
+}
+
+/*Responsividad*/
+
+@media (max-width: 1250px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .encriptador {
+    margin: 168px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .encriptador-contenedor {
+    display: flex;
+    align-items: center;
+    position: inherit;
+  }
+
+  .encriptador-aviso {
+    position: inherit;
+    margin: 15px;
+  }
+
+  .tarjeta {
+    width: 665px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .tarjeta-contenedor {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    bottom: 20%;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .img-computador {
+    display: none;
+  }
+
+  .btn-copiar {
+    position: inherit;
+    width: 100%;
+  }
+
+  .evaluar {
+    width: 100%;
+    height: 210px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 720px) {
+  header .logo {
+    width: 100%;
+    background: var(--Fondo);
+    padding: 2px;
+  }
+
+  .encriptar {
+    width: 90%;
+    font-size: 24px;
+  }
+
+  .encriptador-contenedor {
+    display: grid;
+    gap: 21px;
+  }
+
+  .tarjeta {
+    width: 90%;
+  }
+
+  .copyright {
+    font-size: 20px;
+  }
 }
