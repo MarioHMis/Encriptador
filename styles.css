@@ -84,10 +84,18 @@ textarea:active {
 /* section1*/
 
 .validation p {
-  font-size: 13px;
-  color: var(--color-secundario);
-  opacity: 0.8;
+  width: 100%;
   font-family: var(--fuente-chacra);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  opacity: 0.8;
+  color: var(--color-secundario);
+}
+
+.iconoAviso {
+  align-items: center;
+  position: relative;
 }
 
 .section1 button,
