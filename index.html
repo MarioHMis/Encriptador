@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./images/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.png" type="image/png" />
     <link rel="stylesheet" href="styles.css" />
     <title>Encriptador</title>
   </head>
@@ -15,26 +15,31 @@
       </a>
     </header>
 
-    <main>
+    <main class="container">
       <section class="encriptador">
+        <h1 class="title">Encriptador de Mensajes</h1>
         <textarea
-          class="encriptar"
+          id="input-text"
+          class="input-field"
           placeholder="Ingrese el texto a encriptar"
         ></textarea>
         <div class="encriptador-aviso">
           <img src="./images/aviso.png" alt="Imagen Aviso" class="img-aviso" />
           <p class="texto-aviso">Solo letras minúsculas y sin acentos</p>
         </div>
-        <div class="encriptador-contenedor">
-          <button type="button" class="btn-encriptar">Encriptar</button>
-          <button type="button" class="btn-desencriptar">Desencriptar</button>
+        <div class="button-container">
+          <button id="encrypt-btn" class="btn btn-encriptar">Encriptar</button>
+          <button id="decrypt-btn" class="btn btn-desencriptar">
+            Desencriptar
+          </button>
         </div>
       </section>
+
       <section class="tarjeta">
         <div class="tarjeta-contenedor">
           <img
             src="./images/imagenSecurity.gif"
-            alt="Computador con seguridad"
+            alt="computador con seguridad"
             class="img-computador"
           />
           <p class="texto-uno">Ningún mensaje fue encontrado</p>
@@ -42,8 +47,8 @@
             Ingrese el texto que deseas encriptar o desencriptar
           </p>
         </div>
-        <textarea class="evaluar" readonly></textarea>
-        <button type="button" class="btn-copiar">Copiar</button>
+        <textarea id="output-text" class="output-field" readonly></textarea>
+        <button class="btn btn-copiar">Copiar</button>
       </section>
     </main>
 
@@ -54,12 +59,14 @@
         <a href="https://icons8.com/illustrations/author/627444">Julia G</a>
         from <a href="https://icons8.com/illustrations">Ouch!</a>
       </p>
-      <a href="#">
-        <img src="./images/linkedin.png" alt="Logo Linkedin" class="linked" />
-      </a>
-      <a href="#">
-        <img src="./images/github.png" alt="Logo Github" class="github" />
-      </a>
+      <div class="social-links">
+        <a href="#">
+          <img src="./images/linkedin.png" alt="Logo Linkedin" class="linked" />
+        </a>
+        <a href="#">
+          <img src="./images/github.png" alt="Logo Github" class="github" />
+        </a>
+      </div>
     </footer>
 
     <script src="app.js"></script>

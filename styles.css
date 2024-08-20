@@ -1,324 +1,273 @@
-/*------------
-Fuentes
--------------*/
-@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+/* Importación de fuentes */
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap");
 
 /* Variables */
 :root {
-  --Fondo: #ffffff;
-  --Oscuro: #14274e;
-  --Medio: #394867;
-  --Suave: #9ba4b4;
-  --Ligero: #f1f6f9;
-  --Alerta: #d01414;
-  --Fuente: "Chakra Petch", sans-serif;
+  --color-fondo: #ffffff;
+  --color-oscuro: #161a30;
+  --color-medio: #394867;
+  --color-suave: #b6bbc4;
+  --color-ligero: #f0ece5;
+  --color-alerta: #d01414;
+  --color-primario: #161a30;
+  --color-secundario: #31304d;
+  --fuente-principal: "Chakra Petch", sans-serif;
 }
 
-/* Estilos globales */
+/* Reset básico para eliminar estilos por defecto */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--Fuente);
-  text-decoration: none;
-  background: var(--Ligero);
 }
 
-::selection {
-  background: var(--Oscuro);
-  color: var(--Fondo);
+/* Tipografía y estilos básicos */
+body {
+  font-family: var(--fuente-principal);
+  background: linear-gradient(
+    135deg,
+    var(--color-primario),
+    var(--color-secundario)
+  );
+  color: var(--color-fondo);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-img {
-  max-width: 100%;
-}
-
-/* Header */
 header {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-}
-
-header .logo {
-  width: 48px;
-  height: 48px;
-}
-
-/* Main */
-main {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 40px;
-  gap: 40px;
-}
-
-.encriptador {
-  width: 45%;
-  background: transparent;
-}
-
-.encriptar {
   width: 100%;
-  height: 350px;
-  font-size: 24px;
-  line-height: 36px;
-  outline: none;
-  border: 1px solid var(--Suave);
-  border-radius: 15px;
-  resize: none;
-  background-color: var(--Fondo);
-}
-
-.encriptador-aviso {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  margin-top: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.img-aviso {
-  width: 24px;
-  height: 24px;
+header h1 {
+  font-size: 1.8em;
+  color: var(--color-fondo);
 }
 
-.texto-aviso {
-  font-size: 18px;
-  color: var(--Medio);
+.logo {
+  width: 100px;
+  border-radius: 8px;
+  transition: transform 0.4s ease;
 }
 
-.encriptador-contenedor {
-  display: flex;
-  gap: 20px;
-  margin-top: 20px;
+.logo:hover {
+  transform: scale(1.1);
 }
 
-.btn-encriptar,
-.btn-desencriptar {
-  width: 180px;
-  height: 60px;
-  font-size: 18px;
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 50px 30px;
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 700px;
   text-align: center;
-  color: var(--Ligero);
-  background: var(--Medio);
-  border: 1px solid var(--Ligero);
-  border-radius: 24px;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  animation: fadeIn 1.5s ease-in-out;
+  margin-top: -30px;
 }
 
-.btn-encriptar:hover,
-.btn-desencriptar:hover,
-.btn-copiar:hover {
-  transform: scale(0.98);
-  background-color: var(--Oscuro);
+.title {
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  color: var(--color-fondo);
+}
+.img-aviso {
+  width: 15px;
+  border-radius: 8px;
+  transition: transform 0.4s ease;
+}
+.input-field,
+.output-field {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-fondo);
+  font-size: 1.1em;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.input-field::placeholder {
+  color: var(--ColorSuave);
+  opacity: 0.5;
+}
+
+.input-field:focus,
+.output-field:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.02);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.btn {
+  background-color: var(--color-oscuro);
+  border: none;
+  color: var(--color-fondo);
+  padding: 15px 30px;
+  font-size: 1.2em;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--color-medio);
+  transform: translateY(-5px);
 }
 
 .tarjeta {
-  width: 350px;
-  height: 600px;
-  background: var(--Fondo);
-  box-shadow: 4px 10px 12px -4px var(--Suave);
-  border-radius: 32px;
-  text-align: center;
-  border: 1px solid var(--Suave);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px;
-}
-
-.tarjeta-contenedor {
-  width: 100%;
+  margin-top: 40px;
 }
 
 .img-computador {
-  width: 100%;
-  height: auto;
+  width: 60%;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
 }
 
-.texto-uno {
-  font-size: 22px;
-  color: var(--Oscuro);
+.img-computador:hover {
+  transform: scale(1.05);
 }
 
-.texto-dos {
-  font-size: 16px;
-  color: var(--Medio);
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 
-.evaluar {
-  width: 100%;
-  height: 500px;
-  padding: 20px;
-  font-size: 20px;
-  color: var(--Medio);
-  background: transparent;
-  border-top-right-radius: 32px;
-  border-top-left-radius: 32px;
-  border: none;
-  resize: none;
+.social-links a {
+  margin: 0 15px;
 }
 
-.btn-copiar {
-  width: 220px;
-  height: 60px;
-  margin: 20px auto;
-  font-size: 18px;
-  text-align: center;
-  background: var(--Suave);
-  border: 1px solid var(--Medio);
-  border-radius: 20px;
-  cursor: pointer;
-  color: var(--Ligero);
-  visibility: hidden;
+.social-links img {
+  width: 20%;
+  transition: transform 0.3s ease;
 }
 
-footer {
-  padding: 20px;
-  border-top: 2px solid var(--Suave);
-  color: var(--Medio);
-  text-align: center;
-  font-size: 18px;
+.social-links img:hover {
+  transform: scale(1.3);
 }
 
-.linked,
-.github {
-  width: 24px;
-  height: 24px;
-}
-
-.linked:hover {
-  opacity: 0.8;
-}
-
-.github:hover {
-  opacity: 0.6;
-}
-
-/* Responsividad para pantallas de 1920 x 1080 px */
-@media (min-width: 1920px) {
-  main {
-    padding: 80px 120px;
-    gap: 60px;
+/* Responsividad */
+@media (max-width: 768px) {
+  .container {
+    padding: 30px;
+    max-width: 90%;
+    margin-top: -20px;
   }
 
-  .encriptador {
-    width: 50%;
+  .title {
+    font-size: 2em;
   }
 
-  .encriptar {
-    height: 400px;
-    font-size: 28px;
-    line-height: 42px;
-  }
-
-  .encriptador-aviso {
-    margin-top: 20px;
-  }
-
-  .encriptador-contenedor {
-    margin-top: 30px;
-  }
-
-  .btn-encriptar,
-  .btn-desencriptar {
-    width: 200px;
-    height: 70px;
-    font-size: 20px;
-  }
-
-  .tarjeta {
-    width: 400px;
-    height: 650px;
-  }
-
-  .tarjeta-contenedor {
-    width: 100%;
-    margin-top: 30%;
-  }
-
-  .texto-uno {
-    font-size: 26px;
-  }
-
-  .texto-dos {
-    font-size: 20px;
-  }
-
-  .evaluar {
-    height: 550px;
-    font-size: 24px;
-  }
-
-  .btn-copiar {
-    width: 240px;
-    height: 70px;
-    font-size: 20px;
-    margin: 30px auto;
-  }
-
-  footer {
-    font-size: 20px;
-  }
-}
-
-/* Responsividad para pantallas más pequeñas */
-@media (max-width: 1250px) {
-  main {
+  .button-container {
     flex-direction: column;
-    align-items: center;
-    padding: 20px;
+    gap: 10px;
   }
 
-  .encriptador {
-    width: 80%;
-    margin-top: 40px;
-  }
-
-  .encriptador-contenedor {
-    gap: 16px;
-  }
-
-  .tarjeta {
-    width: 80%;
-    height: auto;
-  }
-
-  .tarjeta-contenedor {
-    width: 100%;
-    margin-top: 40%;
-  }
-
-  .btn-copiar {
+  .btn {
     width: 100%;
   }
 
-  .evaluar {
-    height: 250px;
+  .logo {
+    width: 80px;
   }
 }
 
-@media (max-width: 720px) {
-  header .logo {
-    width: 100%;
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8em;
   }
 
-  .encriptar {
-    width: 90%;
-    font-size: 20px;
+  .logo {
+    width: 70px;
   }
 
-  .encriptador-contenedor {
-    gap: 16px;
+  .input-field,
+  .output-field {
+    font-size: 1em;
+    padding: 12px;
   }
 
-  .tarjeta {
-    width: 90%;
+  .btn {
+    font-size: 1em;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  .title {
+    font-size: 1.6em;
   }
 
-  .copyright {
-    font-size: 16px;
+  .logo {
+    width: 60px;
   }
+
+  .btn {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos del footer */
+footer {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  margin-top: 30px;
+}
+
+.footer-links a {
+  color: var(--color-fondo);
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-links img {
+  width: 24px;
+  transition: transform 0.4s ease;
+}
+
+.footer-links img:hover {
+  transform: scale(1.2);
 }

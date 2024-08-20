@@ -1,9 +1,9 @@
 //-------Selección de Elementos-------//
-const btnEncriptar = document.querySelector(".btn-encriptar");
-const btnDesencriptar = document.querySelector(".btn-desencriptar");
-const txtEncriptar = document.querySelector(".encriptar");
+const btnEncriptar = document.querySelector("#encrypt-btn");
+const btnDesencriptar = document.querySelector("#decrypt-btn");
+const txtEncriptar = document.querySelector("#input-text");
 const aviso = document.querySelector(".texto-aviso");
-const respuesta = document.querySelector(".evaluar");
+const respuesta = document.querySelector("#output-text");
 const btnCopiar = document.querySelector(".btn-copiar");
 const contenido = document.querySelector(".tarjeta-contenedor");
 
